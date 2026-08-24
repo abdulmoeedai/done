@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Student Registration Form</title>
+</head>
+
+<body bgcolor="#ffe4e1">
+
+    <br>
+
+    <h1 align="center">Student Registration Form</h1>
+
+    <br>
+
+    <form>
+
+        <table align="center" width="750" cellpadding="7">
+
+            <tr>
+                <td width="180">Roll no. :</td>
+                <td>
+                    <input type="text" name="rollno" size="35">
+                </td>
+            </tr>
+
+            <tr>
+                <td>Student name :</td>
+                <td>
+                    <input type="text" name="firstname" placeholder="First Name" size="12">
+                    -
+                    <input type="text" name="lastname" placeholder="Last Name" size="12">
+                </td>
+            </tr>
+
+            <tr>
+                <td>Father's name :</td>
+                <td>
+                    <input type="text" name="fathername" size="35">
+                </td>
+            </tr>
+
+            <tr>
+                <td>Date of birth :</td>
+                <td>
+                    <input type="text" name="day" placeholder="Day" size="2">
+                    -
+                    <input type="text" name="month" placeholder="Month" size="4">
+                    -
+                    <input type="text" name="year" placeholder="Year" size="5">
+                    &nbsp;
+                    <i>(DD-MM-YYYY)</i>
+                </td>
+            </tr>
+
+            <tr>
+                <td>Mobile no. :</td>
+                <td>
+                    <input type="text" value="+91" size="2" readonly>
+                    -
+                    <input type="text" name="mobile" size="25">
+                </td>
+            </tr>
+
+            <tr>
+                <td>Email id :</td>
+                <td>
+                    <input type="email" name="email" size="35">
+                </td>
+            </tr>
+
+            <tr>
+                <td>Password :</td>
+                <td>
+                    <input type="password" name="password" size="35">
+                </td>
+            </tr>
+
+            <tr>
+                <td>Gender :</td>
+                <td>
+                    <input type="radio" name="gender" value="Male"> Male
+                    <input type="radio" name="gender" value="Female"> Female
+                </td>
+            </tr>
+
+            <tr>
+                <td>Department :</td>
+                <td>
+                    <input type="checkbox" name="department" value="CSE"> CSE
+                    <input type="checkbox" name="department" value="IT"> IT
+                    <input type="checkbox" name="department" value="ECE"> ECE
+                    <input type="checkbox" name="department" value="Civil"> Civil
+                    <input type="checkbox" name="department" value="Mech"> Mech
+                </td>
+            </tr>
+
+            <tr>
+                <td>Course :</td>
+                <td>
+                    <select name="course" size="1">
+                        <option>-------------------- Select Current Course's --------------------</option>
+                        <option>Bachelor of Computer Science</option>
+                        <option>Bachelor of Information Technology</option>
+                        <option>Bachelor of Engineering</option>
+                        <option>Master of Computer Science</option>
+                    </select>
+                </td>
+            </tr>
+
+            <tr>
+                <td>Student photo :</td>
+                <td>
+                    <input type="file" name="photo">
+                </td>
+            </tr>
+
+            <tr>
+                <td>City :</td>
+                <td>
+                    <input type="text" name="city" size="35">
+                </td>
+            </tr>
+
+            <tr>
+                <td>Address :</td>
+                <td>
+                    <textarea name="address" rows="5" cols="34"></textarea>
+                </td>
+            </tr>
+
+            <tr>
+                <td></td>
+                <td align="center">
+                    <input type="submit" value="Register">
+                </td>
+            </tr>
+
+        </table>
+
+    </form>
+
+</body>
+</html>
