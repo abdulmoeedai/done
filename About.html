@@ -1,42 +1,272 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=>, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    <h1> Interllipaat Courses
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <h3> 1. Web development course
-        <ul>
-            <lI>HTML</LI>
-            <LI>CSS</LI>
-            <LI>JavaScript</LI>
-            <br>
-         <h3>2.Ai and machine learning courses 
-            <li>Ai Course</li>
-            <li>ML Course</li>
-            <li>Gen Ai and Prompt Engineering course</li>
-            <br> 
-        <h3>3.Data Science courses
-            <li>Data Science course</li>
-            <li>Data Engineering course</li>
-            <li>Business Analytics Course</li>
-            <br>
-        <h3>4.Cyber Security Courses
-            <li>Cyber Security</li>
-            <li>Ethical Hacking</li>
-            <li>M.Sc in Cyber Security</li>
-        </h3>
-        </br>
-        </h3>
-        </br>
-         </h3>   
-            
-            <br>
-        </ul>
-    </h3>
-    </h1>
+<title>Flow Navbar</title>
+
+<style>
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    min-height: 100vh;
+    font-family: Arial, sans-serif;
+    background:
+        radial-gradient(circle at 12% 20%, #3574c7 0%, transparent 30%),
+        radial-gradient(circle at 82% 70%, #38277c 0%, transparent 35%),
+        linear-gradient(135deg, #193c83, #080f3e 70%);
+    color: white;
+    overflow-x: hidden;
+}
+
+/* Main Heading */
+
+h1 {
+    text-align: center;
+    margin-top: 42px;
+    font-size: 48px;
+    font-weight: 700;
+    letter-spacing: -1px;
+}
+
+h1 span {
+    color: #4bc5f5;
+    font-size: 58px;
+}
+
+/* Desktop Navbar */
+
+.navbar {
+    width: 80%;
+    height: 86px;
+    margin: 135px auto 0;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    padding: 0 30px;
+
+    background: rgba(255, 255, 255, 0.16);
+    border: 1px solid rgba(255, 255, 255, 0.35);
+    border-radius: 20px;
+
+    backdrop-filter: blur(15px);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+}
+
+/* Logo */
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+
+    font-size: 22px;
+    font-weight: bold;
+}
+
+.logo-circle {
+    width: 29px;
+    height: 29px;
+    border-radius: 50%;
+
+    background: linear-gradient(135deg, #36c6ff, #737cff);
+}
+
+/* Menu */
+
+.menu {
+    display: flex;
+    gap: 38px;
+    margin-left: 80px;
+}
+
+.menu a {
+    color: #f4f4f4;
+    text-decoration: none;
+    font-size: 19px;
+}
+
+.menu a:hover {
+    color: #54c9ff;
+}
+
+/* Sign Up */
+
+.signup {
+    padding: 15px 27px;
+
+    border-radius: 14px;
+
+    background: linear-gradient(
+        100deg,
+        #25c5f3,
+        #8178ee
+    );
+
+    color: white;
+    text-decoration: none;
+
+    font-size: 18px;
+    font-weight: bold;
+}
+
+/* Mobile Navbar */
+
+.mobile-navbar {
+    width: 35%;
+    height: 75px;
+
+    margin: 54px auto 0;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    padding: 0 28px;
+
+    background: rgba(255,255,255,0.18);
+    border: 1px solid rgba(255,255,255,0.35);
+
+    border-radius: 17px;
+
+    backdrop-filter: blur(15px);
+}
+
+/* Hamburger */
+
+.hamburger {
+    width: 38px;
+    display: flex;
+    flex-direction: column;
+    gap: 7px;
+}
+
+.hamburger span {
+    width: 36px;
+    height: 3px;
+    background: white;
+    border-radius: 10px;
+}
+
+/* Responsive */
+
+@media (max-width: 800px) {
+
+    h1 {
+        font-size: 30px;
+    }
+
+    h1 span {
+        font-size: 38px;
+    }
+
+    .navbar {
+        width: 90%;
+        margin-top: 80px;
+    }
+
+    .menu {
+        display: none;
+    }
+
+    .mobile-navbar {
+        width: 55%;
+    }
+}
+
+@media (max-width: 500px) {
+
+    h1 {
+        font-size: 24px;
+    }
+
+    h1 span {
+        font-size: 30px;
+    }
+
+    .navbar {
+        height: 70px;
+        padding: 0 18px;
+    }
+
+    .logo {
+        font-size: 18px;
+    }
+
+    .logo-circle {
+        width: 24px;
+        height: 24px;
+    }
+
+    .signup {
+        padding: 11px 16px;
+        font-size: 14px;
+    }
+
+    .mobile-navbar {
+        width: 80%;
+    }
+}
+
+</style>
+</head>
+
+<body>
+
+<!-- Heading -->
+
+<h1>
+    <span>20</span> CSS Responsive Navbar Designs
+</h1>
+
+
+<!-- Desktop Navbar -->
+
+<div class="navbar">
+
+    <div class="logo">
+        <div class="logo-circle"></div>
+        <span>Flow</span>
+    </div>
+
+    <div class="menu">
+        <a href="#">Home</a>
+        <a href="#">Product</a>
+        <a href="#">Docs</a>
+        <a href="#">Blog</a>
+    </div>
+
+    <a href="#" class="signup">
+        Sign up
+    </a>
+
+</div>
+
+
+<!-- Mobile Navbar -->
+
+<div class="mobile-navbar">
+
+    <div class="logo">
+        <div class="logo-circle"></div>
+        <span>Flow</span>
+    </div>
+
+    <div class="hamburger">
+        <span></span>
+        <span></span>
+        <span></span>
+    </div>
+
+</div>
+
 </body>
 </html>
