@@ -3,259 +3,674 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sign In / Sign Up</title>
+
+    <title>Photon - Photography</title>
 
     <style>
+
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            font-family: Arial, sans-serif;
+            scroll-behavior: smooth;
         }
 
         body {
-            min-height: 100vh;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            background: #f5f5f5;
+            font-family: Arial, Helvetica, sans-serif;
+            color: #333;
+            background: #fff;
         }
 
-        .container {
-            width: 700px;
-            max-width: 95%;
-            min-height: 450px;
-            display: flex;
-            background: white;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.15);
-            overflow: hidden;
-            border-radius: 5px;
-        }
+        /* ================= HEADER ================= */
 
-        /* LEFT SIDE */
-        .login-section {
-            width: 50%;
-            padding: 60px 45px;
-            text-align: center;
-        }
-
-        .login-section h1 {
-            font-size: 30px;
-            margin-bottom: 25px;
-            color: #111;
-        }
-
-        .social {
-            display: flex;
-            justify-content: center;
-            gap: 15px;
-            margin-bottom: 15px;
-        }
-
-        .social span {
-            width: 38px;
-            height: 38px;
-            border: 1px solid #ddd;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-weight: bold;
-            color: #555;
-        }
-
-        .or {
-            color: #777;
-            font-size: 13px;
-            margin-bottom: 12px;
-        }
-
-        input {
+        header {
             width: 100%;
-            height: 42px;
-            border: none;
-            background: #edf0f4;
-            margin-bottom: 12px;
-            padding: 0 14px;
-            outline: none;
-            font-size: 13px;
+            padding: 22px 8%;
+            background: #222;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: fixed;
+            top: 0;
+            left: 0;
+            z-index: 1000;
         }
 
-        .forgot {
-            font-size: 13px;
-            color: #555;
-            margin: 10px 0 18px;
+        .logo {
+            color: #fff;
+            font-size: 28px;
+            font-weight: bold;
+            letter-spacing: 2px;
         }
 
-        button {
-            border: none;
-            cursor: pointer;
+        nav a {
+            color: #fff;
+            text-decoration: none;
+            margin-left: 28px;
+            font-size: 15px;
             transition: 0.3s;
         }
 
-        .signin-btn {
-            width: 125px;
-            height: 40px;
-            border-radius: 25px;
-            background: linear-gradient(90deg, #ff4b20, #ff5722);
-            color: white;
-            font-size: 12px;
-            font-weight: bold;
-            letter-spacing: 1px;
+        nav a:hover {
+            color: #00a8cc;
         }
 
-        .signin-btn:hover {
-            transform: scale(1.05);
-        }
 
-        /* RIGHT SIDE */
-        .signup-section {
-            width: 50%;
-            background: linear-gradient(135deg, #ff321f, #ff4b3e);
-            color: white;
+        /* ================= HERO ================= */
+
+        .hero {
+            height: 100vh;
+
+            background:
+            linear-gradient(
+                rgba(0,0,0,0.55),
+                rgba(0,0,0,0.55)
+            ),
+            url("https://images.unsplash.com/photo-1516035069371-29a1b244cc32?auto=format&fit=crop&w=1800&q=80");
+
+            background-size: cover;
+            background-position: center;
+
             display: flex;
-            flex-direction: column;
             justify-content: center;
             align-items: center;
+
             text-align: center;
-            padding: 40px;
+            color: white;
         }
 
-        .signup-section h1 {
-            font-size: 28px;
+        .hero-content {
+            max-width: 800px;
+            padding: 20px;
+        }
+
+        .hero h1 {
+            font-size: 65px;
+            letter-spacing: 3px;
             margin-bottom: 20px;
         }
 
-        .signup-section p {
-            font-size: 13px;
-            line-height: 1.6;
+        .hero p {
+            font-size: 20px;
+            margin-bottom: 35px;
+            color: #eee;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 15px 35px;
+            background: #00a8cc;
+            color: #fff;
+            text-decoration: none;
+            border-radius: 4px;
+            transition: 0.3s;
+        }
+
+        .btn:hover {
+            background: #fff;
+            color: #222;
+        }
+
+
+        /* ================= GENERAL SECTION ================= */
+
+        section {
+            padding: 100px 8%;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 55px;
+        }
+
+        .section-title h2 {
+            font-size: 40px;
+            margin-bottom: 15px;
+        }
+
+        .section-title p {
+            color: #777;
+            font-size: 16px;
+        }
+
+
+        /* ================= ABOUT ================= */
+
+        .about {
+            display: flex;
+            gap: 60px;
+            align-items: center;
+        }
+
+        .about-image {
+            width: 50%;
+        }
+
+        .about-image img {
+            width: 100%;
+            height: 450px;
+            object-fit: cover;
+            border-radius: 6px;
+        }
+
+        .about-text {
+            width: 50%;
+        }
+
+        .about-text h2 {
+            font-size: 40px;
             margin-bottom: 25px;
-            max-width: 230px;
         }
 
-        .signup-btn {
-            width: 130px;
-            height: 40px;
-            border-radius: 25px;
-            border: 1px solid white;
-            background: transparent;
+        .about-text p {
+            color: #666;
+            line-height: 1.8;
+            margin-bottom: 18px;
+        }
+
+
+        /* ================= SERVICES ================= */
+
+        .services {
+            background: #f5f5f5;
+        }
+
+        .service-container {
+            display: flex;
+            justify-content: center;
+            gap: 25px;
+            flex-wrap: wrap;
+        }
+
+        .service-box {
+            background: #fff;
+            width: 300px;
+            padding: 40px 25px;
+            text-align: center;
+            border-radius: 5px;
+            transition: 0.3s;
+        }
+
+        .service-box:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+
+        .service-icon {
+            font-size: 45px;
+            margin-bottom: 20px;
+        }
+
+        .service-box h3 {
+            margin-bottom: 15px;
+            font-size: 23px;
+        }
+
+        .service-box p {
+            color: #777;
+            line-height: 1.6;
+        }
+
+
+        /* ================= GALLERY ================= */
+
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+        }
+
+        .gallery-item {
+            overflow: hidden;
+            height: 280px;
+            border-radius: 5px;
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: 0.5s;
+        }
+
+        .gallery-item img:hover {
+            transform: scale(1.08);
+        }
+
+
+        /* ================= CONTACT ================= */
+
+        .contact-section {
+            background: #f5f5f5;
+        }
+
+        .contact-container {
+            max-width: 750px;
+            margin: auto;
+            background: #fff;
+            padding: 45px;
+            border-radius: 6px;
+        }
+
+        .contact-container input,
+        .contact-container textarea {
+            width: 100%;
+            padding: 15px;
+            margin-bottom: 20px;
+            border: 1px solid #ddd;
+            outline: none;
+            font-size: 15px;
+            border-radius: 3px;
+        }
+
+        .contact-container textarea {
+            height: 150px;
+            resize: none;
+        }
+
+        .contact-container button {
+            width: 100%;
+            padding: 15px;
+            border: none;
+            background: #00a8cc;
             color: white;
-            font-weight: bold;
-            letter-spacing: 1px;
+            font-size: 16px;
+            cursor: pointer;
+            border-radius: 3px;
         }
 
-        .signup-btn:hover {
-            background: white;
-            color: #ff432e;
+        .contact-container button:hover {
+            background: #222;
         }
 
-        /* RESPONSIVE */
-        @media (max-width: 650px) {
-            .container {
+
+        /* ================= FOOTER ================= */
+
+        footer {
+            background: #222;
+            color: #fff;
+            text-align: center;
+            padding: 30px;
+        }
+
+        footer p {
+            color: #bbb;
+        }
+
+
+        /* ================= RESPONSIVE ================= */
+
+        @media (max-width: 900px) {
+
+            header {
+                padding: 18px 5%;
+            }
+
+            .hero h1 {
+                font-size: 45px;
+            }
+
+            .about {
                 flex-direction: column;
             }
 
-            .login-section,
-            .signup-section {
+            .about-image,
+            .about-text {
                 width: 100%;
             }
 
-            .login-section {
-                padding: 45px 35px;
+            .gallery {
+                grid-template-columns: repeat(2, 1fr);
             }
 
-            .signup-section {
-                min-height: 300px;
-            }
         }
+
+
+        @media (max-width: 600px) {
+
+            header {
+                flex-direction: column;
+                gap: 15px;
+            }
+
+            nav a {
+                margin: 0 7px;
+                font-size: 13px;
+            }
+
+            .hero h1 {
+                font-size: 38px;
+            }
+
+            .hero p {
+                font-size: 16px;
+            }
+
+            section {
+                padding: 70px 5%;
+            }
+
+            .gallery {
+                grid-template-columns: 1fr;
+            }
+
+            .contact-container {
+                padding: 25px;
+            }
+
+        }
+
     </style>
 </head>
 
+
 <body>
 
-    <div class="container">
 
-        <!-- SIGN IN -->
-        <div class="login-section">
+<!-- ================= HEADER ================= -->
 
-            <h1>Sign in</h1>
+<header>
 
-            <div class="social">
-                <span>f</span>
-                <span>G+</span>
-                <span>in</span>
-            </div>
+    <div class="logo">
+        PHOTON
+    </div>
 
-            <div class="or">or use your account</div>
+    <nav>
+        <a href="#home">Home</a>
+        <a href="#about">About</a>
+        <a href="#services">Services</a>
+        <a href="#gallery">Gallery</a>
+        <a href="#contact">Contact</a>
+    </nav>
 
-            <form id="loginForm">
+</header>
 
-                <input
-                    type="email"
-                    id="email"
-                    placeholder="Email"
-                    required
-                >
 
-                <input
-                    type="password"
-                    id="password"
-                    placeholder="Password"
-                    required
-                >
 
-                <div class="forgot">
-                    Forgot your password?
-                </div>
+<!-- ================= HOME ================= -->
 
-                <button class="signin-btn" type="submit">
-                    SIGN IN
-                </button>
+<section class="hero" id="home">
 
-            </form>
+    <div class="hero-content">
+
+        <h1>Capture The Moment</h1>
+
+        <p>
+            Professional Photography & Creative Visuals
+        </p>
+
+        <a href="#gallery" class="btn">
+            View Gallery
+        </a>
+
+    </div>
+
+</section>
+
+
+
+<!-- ================= ABOUT ================= -->
+
+<section id="about">
+
+    <div class="about">
+
+        <div class="about-image">
+
+            <img
+            src="https://images.unsplash.com/photo-1452780212940-6f5c0d14d848?auto=format&fit=crop&w=1000&q=80"
+            alt="Photography">
+
         </div>
 
 
-        <!-- SIGN UP -->
-        <div class="signup-section">
+        <div class="about-text">
 
-            <h1>Hello, Friend!</h1>
+            <h2>About Photon</h2>
 
             <p>
-                Enter your personal details and start
-                journey with us
+                Photon is a creative photography platform
+                focused on capturing beautiful moments and
+                unforgettable memories.
             </p>
 
-            <button class="signup-btn" onclick="signup()">
-                SIGN UP
-            </button>
+            <p>
+                We combine creativity, photography and modern
+                visual design to create images that tell stories.
+            </p>
+
+            <p>
+                From portraits and landscapes to weddings and
+                special events, every photograph is created
+                with passion and attention to detail.
+            </p>
+
+            <a href="#contact" class="btn">
+                Contact Us
+            </a>
 
         </div>
 
     </div>
 
-
-    <script>
-
-        document.getElementById("loginForm").addEventListener("submit", function(e) {
-
-            e.preventDefault();
-
-            const email = document.getElementById("email").value;
-            const password = document.getElementById("password").value;
-
-            if (email && password) {
-                alert("Sign In button clicked!");
-            }
-
-        });
+</section>
 
 
-        function signup() {
-            alert("Sign Up page will open here.");
-        }
 
-    </script>
+<!-- ================= SERVICES ================= -->
+
+<section class="services" id="services">
+
+    <div class="section-title">
+
+        <h2>Our Services</h2>
+
+        <p>
+            Professional photography services for every occasion
+        </p>
+
+    </div>
+
+
+    <div class="service-container">
+
+
+        <div class="service-box">
+
+            <div class="service-icon">
+                📷
+            </div>
+
+            <h3>Photography</h3>
+
+            <p>
+                Creative and professional photography
+                for personal and business projects.
+            </p>
+
+        </div>
+
+
+
+        <div class="service-box">
+
+            <div class="service-icon">
+                💍
+            </div>
+
+            <h3>Weddings</h3>
+
+            <p>
+                Beautiful wedding photography that
+                preserves your special moments.
+            </p>
+
+        </div>
+
+
+
+        <div class="service-box">
+
+            <div class="service-icon">
+                🌄
+            </div>
+
+            <h3>Landscape</h3>
+
+            <p>
+                Stunning landscape photography
+                inspired by nature and adventure.
+            </p>
+
+        </div>
+
+
+    </div>
+
+</section>
+
+
+
+<!-- ================= GALLERY ================= -->
+
+<section id="gallery">
+
+    <div class="section-title">
+
+        <h2>Our Gallery</h2>
+
+        <p>
+            Some of our favorite photographs
+        </p>
+
+    </div>
+
+
+    <div class="gallery">
+
+
+        <div class="gallery-item">
+
+            <img
+            src="https://images.unsplash.com/photo-1500534623283-312aade485b7?auto=format&fit=crop&w=900&q=80"
+            alt="Photo 1">
+
+        </div>
+
+
+        <div class="gallery-item">
+
+            <img
+            src="https://images.unsplash.com/photo-1501785888041-af3ef285b470?auto=format&fit=crop&w=900&q=80"
+            alt="Photo 2">
+
+        </div>
+
+
+        <div class="gallery-item">
+
+            <img
+            src="https://images.unsplash.com/photo-1493246507139-91e8fad9978e?auto=format&fit=crop&w=900&q=80"
+            alt="Photo 3">
+
+        </div>
+
+
+        <div class="gallery-item">
+
+            <img
+            src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=900&q=80"
+            alt="Photo 4">
+
+        </div>
+
+
+        <div class="gallery-item">
+
+            <img
+            src="https://images.unsplash.com/photo-1511497584788-876760111969?auto=format&fit=crop&w=900&q=80"
+            alt="Photo 5">
+
+        </div>
+
+
+        <div class="gallery-item">
+
+            <img
+            src="https://images.unsplash.com/photo-1441974231531-c6227db76b6e?auto=format&fit=crop&w=900&q=80"
+            alt="Photo 6">
+
+        </div>
+
+
+    </div>
+
+</section>
+
+
+
+<!-- ================= CONTACT ================= -->
+
+<section class="contact-section" id="contact">
+
+    <div class="section-title">
+
+        <h2>Contact Us</h2>
+
+        <p>
+            Let's create something beautiful together
+        </p>
+
+    </div>
+
+
+    <div class="contact-container">
+
+        <form>
+
+            <input
+            type="text"
+            placeholder="Your Name"
+            required>
+
+
+            <input
+            type="email"
+            placeholder="Your Email"
+            required>
+
+
+            <input
+            type="text"
+            placeholder="Subject">
+
+
+            <textarea
+            placeholder="Your Message"></textarea>
+
+
+            <button type="submit">
+                Send Message
+            </button>
+
+        </form>
+
+    </div>
+
+</section>
+
+
+
+<!-- ================= FOOTER ================= -->
+
+<footer>
+
+    <p>
+        © 2026 Photon. All Rights Reserved.
+    </p>
+
+</footer>
+
 
 </body>
 </html>
